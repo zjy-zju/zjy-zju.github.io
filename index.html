@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+</head>
+<title>Junyi Zeng</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- For arrangement -->
+<link rel="stylesheet" href="styles/w3.css">
+<!-- For icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+<!-- For utilities -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="styles/css/bootstrap.min.css"> -->
+
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Helvetica;
+    font-weight: 400;
+    color: #000000;
+  }
+
+  li,
+  p {
+    font-family: Helvetica;
+  }
+
+  body,
+  html {
+    height: 100%;
+    /* color: #777; */
+    color: #555;
+    /* font-size: 16px; */
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .pub-title {
+    /* font-family: monaco; */
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .pub-conference {
+    /* font-family: "Lato"; */
+    font-family: Helvetica;
+    /* font-weight: bold; */
+  }
+
+  .pub-authors {
+    /* font-family: monaco; */
+    /* font-family: "Lato"; */
+    font-family: Helvetica;
+    /* font-style: italic; */
+    color: #000000;
+  }
+
+  .pub-highlight {
+    color: #e83015;
+    font-family: Helvetica;
+  }
+
+  .prj-title {
+    /* font-family: monaco; */
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .prj-language {
+    /* font-family: "Lato"; */
+    font-family: Helvetica;
+    /* font-weight: bold; */
+  }
+
+  .prj-course {
+    /* font-family: "Lato"; */
+    font-family: Helvetica;
+    /* font-weight: bold; */
+  }
+
+  .prj-authors {
+    /* font-family: monaco; */
+    /* font-family: "Lato"; */
+    font-family: Helvetica;
+    /* font-style: italic; */
+    color: #000000;
+  }
+
+  .w3-wide {
+    letter-spacing: 12px;
+    margin-right: -12px;
+  }
+
+  .w3-hover-opacity {
+    cursor: pointer;
+  }
+
+  .pub {
+    font-style: Helvetica;
+  }
+
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1600px) {
+
+    .bgimg-1 {
+      background-attachment: scroll;
+      min-height: 400px;
+    }
+  }
+
+  .hero-overlay .btn {
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary {
+    border-color: #0095eb !important;
+    background: #0095eb !important;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary.active,
+  .btn-primary:visited,
+  .open>.dropdown-toggle.btn-primary {
+    background: #0095eb !important;
+  }
+
+  .btn-light {
+    border-color: #fff !important;
+    background: #fff !important;
+  }
+
+  .btn-light:hover,
+  .btn-light:active,
+  .btn-light.active {
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .btn-outline {
+    background-color: transparent !important;
+    color: inherit;
+    transition: all .5s;
+  }
+
+  .btn-primary.btn-outline {
+    color: #0095eb !important;
+    border-color: #0095eb !important;
+  }
+
+  .btn-primary.btn-outline:focus {
+    color: #0095eb !important;
+  }
+
+  .btn-primary.btn-outline:active {
+    color: #fff !important;
+  }
+
+  .btn-light.btn-outline {
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+
+  .btn-light.btn-outline:focus {
+    color: #fff !important;
+  }
+
+  .btn-light.btn-outline:active {
+    color: transparent !important;
+  }
+
+  .btn-success.btn-outline {
+    color: #5cb85c;
+  }
+
+  .btn-info.btn-outline {
+    color: #5bc0de;
+  }
+
+  .btn-warning.btn-outline {
+    color: #f0ad4e;
+  }
+
+  .btn-danger.btn-outline {
+    color: #d9534f;
+  }
+
+  .btn-primary.btn-outline:hover,
+  .btn-light.btn-outline:hover,
+  .btn-success.btn-outline:hover,
+  .btn-info.btn-outline:hover,
+  .btn-warning.btn-outline:hover,
+  .btn-danger.btn-outline:hover {
+    color: #fff !important;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    /* max-height: 400px; */
+  }
+</style>
+
+<body>
+
+  <!-- Head -->
+  <div class="w3-content w3-container w3-padding-16" id="head">
+    <div class="w3-row">
+      <div class="w3-col m4 w3-center w3-padding-large">
+        <img src="assets/profile.jpg" class="w3-circle w3-image " alt="My Photo" width="200" height="200">
+      </div>
+
+      <div class="w3-col m6 w3-padding-large">
+        <br>
+        <h1 style="color:#000000; text-align: center; text-shadow: 0.2px 0.2px 0.2px grey; font-size: 64px;">Junyi Zeng</h1>
+        <div style="color:grey; text-align: center; font-size: 20px;">曾君益</div>
+        <div style="color:rgb(103, 103, 103); text-align: center; font-weight: 300; text-shadow: 0.2px 0.2px 0.2px grey;">Zhejiang University</div>
+        
+        <div class="w3-large w3-section w3-center">
+          <!-- <a href="mailto:zengjunyi.zju@gmail.com">Email</a>  -->
+          <a href="mailto:zengjunyi@zju.edu.cn">Email</a> 
+          &nbsp/&nbsp
+          <a href="https://github.com/zjy-zju">GitHub</a>
+          &nbsp/&nbsp
+          <a href="https://b23.tv/CzGJ7BY">Bilibili</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About 关于 -->
+  <div class="w3-content w3-container w3-padding-16" id="about">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">About Me</h3>
+    <p style="text-align: justify;">
+      I am an MD student at <a href="http://www.cad.zju.edu.cn/">State Key Lab of CAD&CG</a>, 
+      <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>, 
+      supervised by <a href="https://zhpcui.github.io/">Prof. Zhaopeng Cui</a>.
+      Before that, I obtained my Bachelor degree at <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, 
+      <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>.
+      I have a broad interest in 3D vision technologies and its AR/VR applications, including neural
+      rendering and 3D scene editing.
+    </p>
+  </div>
+
+  <!-- Publications -->
+  <div class="w3-content w3-container w3-padding-16" id="publications">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Publications</h3>
+    <p>
+    <!-- (* indicates equal contribution, and † indicates corresponding authors.) -->
+    (* indicates equal contribution.)
+    </p>
+
+    <div class="w3-row-padding w3-section" onmouseout="neumesh_start()" onmouseover="neumesh_stop()">
+      <div class="w3-col m6 w3-center">
+        <div style="width: 85% ; margin-left: auto; margin-right: auto;">
+        <video muted autoplay loop>
+          <source src="publications/Mirror-NeRF/project_page_video_compressed.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-">
+        <div class="pub-title">Mirror-NeRF: Learning Neural Radiance Fields for Mirrors with Whitted-Style Ray Tracing
+        </div>
+        <div class="pub-conference">
+          ACM MM 2023
+        </div>
+        <div class="pub-authors">
+        <b>Junyi Zeng</b>*, Chong Bao*, Rui Chen, Zilong Dong, Guofeng Zhang, Hujun Bao, Zhaopeng Cui
+        </div>
+        <a class="btn btn-primary btn-outline btn-sm" href="http://www.cad.zju.edu.cn/home/gfzhang/papers/mirror-nerf/mirror-nerf.pdf" target="_blank"
+          rel="noopener">
+          Paper
+        </a>
+        &nbsp
+        <a class="btn btn-primary btn-outline btn-sm" href="https://zju3dv.github.io/Mirror-NeRF/" target="_blank"
+          rel="noopener">
+          Project Page
+        </a>
+        &nbsp
+        <a class="btn btn-primary btn-outline btn-sm" href="https://github.com/zju3dv/Mirror-NeRF/">
+          Code
+        </a>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-section" onmouseout="neumesh_start()" onmouseover="neumesh_stop()">
+      <div class="w3-col m6 w3-center">
+        <div style="width: 85% ; margin-left: auto; margin-right: auto;">
+        <video muted autoplay loop>
+          <source src="publications/neumesh/video_teaser_compressed.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        </div>
+      </div>
+      <div class="w3-col m6 w3-">
+        <div class="pub-title">NeuMesh: Learning Disentangled Neural Mesh-based Implicit Field for Geometry and Texture Editing
+        </div>
+        <div class="pub-conference">
+          ECCV 2022 (Oral)
+        </div>
+        <div class="pub-authors">
+        Bangbang Yang*, Chong Bao*, <b>Junyi Zeng</b>, Hujun Bao, Yinda Zhang, Zhaopeng Cui, Guofeng Zhang
+        </div>
+        <a class="btn btn-primary btn-outline btn-sm" href="http://www.cad.zju.edu.cn/home/gfzhang/papers/neumesh/neumesh.pdf" target="_blank"
+          rel="noopener">
+          Paper
+        </a>
+        &nbsp
+        <a class="btn btn-primary btn-outline btn-sm" href="https://zju3dv.github.io/neumesh/" target="_blank"
+          rel="noopener">
+          Project Page
+        </a>
+        &nbsp
+        <a class="btn btn-primary btn-outline btn-sm" href="https://github.com/zju3dv/neumesh/">
+          Code
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  
+  <!-- Projects -->
+  <div class="w3-content w3-container w3-padding-16" id="projects">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;" id="projects_head">Projects (Selected)
+      &nbsp
+      <a class="btn btn-primary btn-outline btn-sm" id="projects_btn">Show</a>
+    </h3>
+    <div id="projects_body" style="display: none;">
+      <p>
+      (Ranking in no particular order.)
+      </p>
+
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+            <video muted autoplay loop>
+              <source src="projects/RelightingObjectNeRF.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">
+            Learning Neural Radiance Field for Editable Scene Rendering (Relighting ObjectNeRF)
+          </div>
+          <div class="prj-language">
+            Pytorch
+          </div>
+          <div class="prj-course">
+            <!-- Excellent Graduation Thesis for Undergraduate Students 2021 -->
+            Excellent Undergraduate Thesis 2021
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <!-- <iframe src="//player.bilibili.com/player.html?aid=730223635&bvid=BV1fD4y1B7ws&cid=822933895&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
+          <a href="https://www.bilibili.com/video/BV1fD4y1B7ws/"> <img src="projects/BattleCity.png" class="w3-image" alt="BattleCity"> </a>
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Battle City on FPGA
+          </div>
+          <div class="prj-language">
+            Verilog HDL
+          </div>
+          <div class="prj-course">
+            Digital Logic Design 2019
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <!-- <iframe src="//player.bilibili.com/player.html?aid=688195745&bvid=BV1C24y1d76b&cid=835333540&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
+          <a href="https://www.bilibili.com/video/BV1C24y1d76b/"> <img src="projects/QuestionnaireWebsite.png" class="w3-image" alt="QuestionnaireWebsite"> </a>
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Questionnaire Website
+          </div>
+          <div class="prj-language">
+            Vue | Django
+          </div>
+          <div class="prj-course">
+            B/S Architecture Software Design 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/AIReversi.png" class="w3-image" alt="AIReversi">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">AI Reversi
+          </div>
+          <div class="prj-language">
+            Python
+          </div>
+          <div class="prj-course">
+            Artificial Intelligence 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/MiniCAD.png" class="w3-image" alt="MiniCAD">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">MiniCAD: A Simple Drawing Software
+          </div>
+          <div class="prj-language">
+            Java
+          </div>
+          <div class="prj-course">
+            Java Application Design 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/PipelinedCPU.png" class="w3-image" alt="PipelinedCPU">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Pipelined CPU with Exception and Interrupt
+          </div>
+          <div class="prj-language">
+            Verilog HDL
+          </div>
+          <div class="prj-course">
+            Computer Architecture 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <!-- <img src="projects/ZJUNIX.png" class="w3-image" alt="ZJUNIX"> -->
+          <img src="projects/ZJUNIX_en.png" class="w3-image" alt="ZJUNIX">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">ZJUNIX
+          </div>
+          <div class="prj-language">
+            C++
+          </div>
+          <div class="prj-course">
+            Operating System 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng, Shuhan Liu, Xin Zhang
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/PascalCompiler.png" class="w3-image" alt="PascalCompiler">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Pascal Compiler
+          </div>
+          <div class="prj-language">
+            C | lex | yacc | bash
+          </div>
+          <div class="prj-course">
+            Compiler Principle 2020
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng, Honghui Weng, Kehao Chen
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/EasyAR.png" class="w3-image" alt="EasyAR">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Easy Augmented Reality
+          </div>
+          <div class="prj-language">
+            Python
+          </div>
+          <div class="prj-course">
+            Computer Vision 2021
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng, Zhuo Chen
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/MCPT.png" class="w3-image" alt="MCPT">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Monte Carlo Path Tracing
+          </div>
+          <div class="prj-language">
+            C++
+          </div>
+          <div class="prj-course">
+            Computer Graphics 2021
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-row-padding w3-section">
+        <div class="w3-col m6 w3-center">
+          <div style="width: 50% ; margin-left: auto; margin-right: auto;">
+          <img src="projects/ScanLineZBuffer.png" class="w3-image" alt="ScanLineZBuffer">
+          </div>
+        </div>
+        <div class="w3-col m6 w3-">
+          <div class="prj-title">Scan-Line Z-Buffer Algorithm
+          </div>
+          <div class="prj-language">
+            C++
+          </div>
+          <div class="prj-course">
+            Computer Graphics 2021
+          </div>
+          <div class="prj-authors">
+          Junyi Zeng
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="w3-content w3-container w3-padding-16" id="experience">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Experience</h3>
+    <li>2021~Current: MD in Computer Science and Technology at <a href="http://www.cad.zju.edu.cn/">State Key Lab of CAD&CG</a>, <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>.</li>
+    <li>2017~2021: B.Eng. in Computer Science and Technology at <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>.</li>
+
+    <!-- Logo 标志 -->
+    <!-- <div class="w3-col m4 w3-center w3-padding-large">
+      <img src="assets/logo_zju.png" style="width:66%" alt="Zhejiang University">
+    </div>
+    <div class="w3-col m4 w3-center w3-padding-large">
+      <img src="assets/logo_ckc.png" style="width:66%" alt="CKC Honor College">
+    </div>
+    <div class="w3-col m4 w3-center w3-padding-large">
+      <img src="assets/logo_cad.jpg" style="width:88%" alt="State Key Lab of CAD&CG">
+    </div> -->
+  </div>
+
+  <br>
+
+  <div class="w3-content w3-container w3-padding-16" id="awards">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Awards (Selected)</h3>
+    <li>Outstanding Graduates of Zhejiang University: 2021</li>
+    <li>Zhejiang University Scholarship - First Prize: 2018, 2019</li>
+    <li>Academic Excellence Award of Zhejiang University: 2018, 2019, 2020</li>
+    <li>Outstanding Student of Zhejiang University: 2018, 2019</li>
+  </div>
+
+  <br>
+
+  <!-- Logo 标志 -->
+  <div class="w3-content w3-container w3-padding-16" id="logo">
+    <div class="w3-col m4 w3-center w3-padding-large">
+      <a href="http://www.zju.edu.cn/english/"> <img src="assets/logo_zju.png" style="width:66%" alt="Zhejiang University"> </a>
+    </div>
+
+    <div class="w3-col m4 w3-center w3-padding-large">
+      <a href="http://ckc.zju.edu.cn/ckcen/"> <img src="assets/logo_ckc.png" style="width:66%" alt="CKC Honor College"> </a>
+    </div>
+
+    <div class="w3-col m4 w3-center w3-padding-large">
+      <a href="http://www.cad.zju.edu.cn/"> <img src="assets/logo_cad.jpg" style="width:90%" alt="State Key Lab of CAD&CG"> </a>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- </p> -->
+  <!-- Footer -->
+
+  <script>
+    window.onload=function(){
+      var projects_btn = document.getElementById("projects_btn");
+      var projects_body = document.getElementById("projects_body");
+      projects_btn.onclick=function(){
+        if (projects_body.style.display == "none"){
+          projects_body.style.display="block"; //display
+        }
+        else{
+          projects_body.style.display="none"; //hide
+        }
+      }
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+    // Change style of navbar on scroll
+    window.onscroll = function () { myFunction() };
+    function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V09QFKH5V2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-V09QFKH5V2');
+  </script>
+
+</body>
+
+</html>
