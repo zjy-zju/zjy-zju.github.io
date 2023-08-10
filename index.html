@@ -339,9 +339,10 @@
   <div class="w3-content w3-container w3-padding-16" id="projects">
     <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;" id="projects_head">Projects (Selected)
       &nbsp
-      <a class="btn btn-primary btn-outline btn-sm" id="projects_btn">Show</a>
+      <a class="btn btn-primary btn-outline btn-sm" id="projects_btn_hide" style="display: inline-block;">Hide</a>
+      <a class="btn btn-primary btn-outline btn-sm" id="projects_btn" style="display: none;">Show</a>
     </h3>
-    <div id="projects_body" style="display: none;">
+    <div id="projects_body" style="display: block;">
       <p>
       (Ranking in no particular order.)
       </p>
@@ -591,6 +592,16 @@
 
   <br>
 
+  <div class="w3-content w3-container w3-padding-16" id="awards">
+    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Awards (Selected)</h3>
+    <li>Outstanding Graduates of Zhejiang University: 2021</li>
+    <li>Zhejiang University Scholarship - First Prize: 2018, 2019</li>
+    <li>Academic Excellence Award of Zhejiang University: 2018, 2019, 2020</li>
+    <li>Outstanding Student of Zhejiang University: 2018, 2019</li>
+  </div>
+
+  <br>
+
   <div class="w3-content w3-container w3-padding-16" id="experience">
     <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Experience</h3>
     <li>2021~Current: MD in Computer Science and Technology at <a href="http://www.cad.zju.edu.cn/">State Key Lab of CAD&CG</a>, <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>.</li>
@@ -606,16 +617,6 @@
     <div class="w3-col m4 w3-center w3-padding-large">
       <img src="assets/logo_cad.jpg" style="width:88%" alt="State Key Lab of CAD&CG">
     </div> -->
-  </div>
-
-  <br>
-
-  <div class="w3-content w3-container w3-padding-16" id="awards">
-    <h3 style="color: #000000;  text-shadow: 0.2px 0.2px 0.2px grey;">Awards (Selected)</h3>
-    <li>Outstanding Graduates of Zhejiang University: 2021</li>
-    <li>Zhejiang University Scholarship - First Prize: 2018, 2019</li>
-    <li>Academic Excellence Award of Zhejiang University: 2018, 2019, 2020</li>
-    <li>Outstanding Student of Zhejiang University: 2018, 2019</li>
   </div>
 
   <br>
@@ -644,16 +645,31 @@
   <script>
     window.onload=function(){
       var projects_btn = document.getElementById("projects_btn");
+      var projects_btn_hide = document.getElementById("projects_btn_hide");
       var projects_body = document.getElementById("projects_body");
+      projects_btn_hide.onclick=function(){
+        projects_body.style.display="none"; //hide
+        projects_btn_hide.style.display="none"; //hide
+        projects_btn.style.display="inline-block"; //show
+      }
       projects_btn.onclick=function(){
-        if (projects_body.style.display == "none"){
-          projects_body.style.display="block"; //display
-        }
-        else{
-          projects_body.style.display="none"; //hide
-        }
+        projects_body.style.display="block"; //show
+        projects_btn_hide.style.display="inline-block"; //show
+        projects_btn.style.display="none"; //hide
       }
     }
+    // window.onload=function(){
+    //   var projects_btn = document.getElementById("projects_btn");
+    //   var projects_body = document.getElementById("projects_body");
+    //   projects_btn.onclick=function(){
+    //     if (projects_body.style.display == "none"){
+    //       projects_body.style.display="block"; //display
+    //     }
+    //     else{
+    //       projects_body.style.display="none"; //hide
+    //     }
+    //   }
+    // }
 
     // Modal Image Gallery
     function onClick(element) {
